@@ -1,0 +1,11 @@
+- hosts: sentry
+  sudo: true
+
+  roles:
+  - DavidWittman.redis
+  - Stouts.nginx
+  - Stouts.python
+  - Stouts.supervisor
+  - ANXS.postgresql
+  - ansible-pip
+  - lepture.sentry

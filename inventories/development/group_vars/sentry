@@ -1,0 +1,36 @@
+setup_user: sentry
+
+sentry_logfile_dir: /var/log
+
+# Setup databases
+sentry_db_name: sentry
+sentry_db_user: postgres
+sentry_db_password: "postgres"
+sentry_db_host: "127.0.0.1"
+sentry_db_port: "5432"
+sentry_db_options: {}
+
+postgresql_databases:
+  - name: sentry
+    owner: postgres          # optional; specify the owner of the database
+
+# List of users to be created (optional)
+postgresql_users:
+  - name: postgres
+    pass: postgres
+
+# List of user privileges to be applied (optional)
+postgresql_user_privileges:
+  - name: postgres                   # user name
+    db: sentry                  # database
+    priv: "ALL"                 # privilege string format: example: INSERT,UPDATE/table:SELECT/anothertable:ALL
+
+# Initial data
+sentry_admin_username: admin                              # Creates admin user with credentials, set blank for skip
+sentry_admin_email: admin@{{sentry_hostname}}
+sentry_admin_password: admin
+sentry_teams: [sentry]                                    # Creates teams for admin user, set blank for skip
+sentry_projects:                                          # Creates project for admin user, set blank for skip
+- name: sentry
+  platform: python
+  team: sentry
