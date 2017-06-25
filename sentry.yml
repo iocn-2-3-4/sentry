@@ -5,7 +5,6 @@
   - DavidWittman.redis
   - Stouts.nginx
   - Stouts.python
-  - Stouts.supervisor
-  - ANXS.postgresql
   - ansible-pip
+  - ANXS.postgresql
   - lepture.sentry
